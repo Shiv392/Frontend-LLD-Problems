@@ -50,7 +50,7 @@ This repository includes commonly used UI components that are frequently asked i
 
 🚀 Getting Started
 1. Clone the repository
-git clone https://github.com/your-username/frontend-lld-practice.git
+git clone https://github.com/Shiv392/Frontend-LLD-Problems
 cd frontend-lld-practice
 2. Install dependencies
 npm install
