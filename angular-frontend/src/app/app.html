@@ -1,0 +1,26 @@
+<div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100">
+
+  <div class="bg-white shadow-xl rounded-2xl p-6 w-80">
+
+    <h2 class="text-xl font-semibold text-gray-700 mb-4 text-center">
+      Multi Select Dropdown
+    </h2>
+
+    <app-multiselect-dropdown
+      [options]="options"
+      bind_label="label"
+      bind_value="value"
+      [(ngModel)]="selected_field"
+      [multiple]="false"
+    ></app-multiselect-dropdown>
+
+    <div class="mt-4 text-sm text-gray-600 text-center">
+      Selected:
+      <span class="font-medium text-blue-600">
+        {{ selected_field }}
+      </span>
+    </div>
+
+  </div>
+
+</div>

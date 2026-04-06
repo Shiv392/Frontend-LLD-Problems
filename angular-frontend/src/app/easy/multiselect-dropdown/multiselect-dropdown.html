@@ -1,1 +1,31 @@
-<p>multiselect-dropdown works!</p>
+<ng-container>
+<div class="select-container">
+  <div class="select-box" (click)="toggle_dropdown(); $event.stopPropagation()">
+    <span *ngIf="!value || (multiple && value.length === 0)">
+      {{ placeholder }}
+    </span>
+
+    <span *ngIf="!multiple && value">
+      {{ filered_options.find(i => i[bind_value] === value)?.[bind_label] }}
+    </span>
+
+    <span *ngIf="multiple && value?.length">
+      {{ value.length }} selected
+    </span>
+  </div>
+
+  <div class="dropdown" *ngIf="is_open" (click)="$event.stopPropagation()">
+    <div>
+        <input type="text" [(ngModel)]="search_key" placeholder="Search"  (input)="filter($event)">
+    </div>
+    <div
+      class="option"
+      *ngFor="let item of filered_options"
+      (click)="select_item(item); $event.stopPropagation()"
+      [class.selected]="is_selected(item)"
+    >
+      {{ item[bind_label] }}
+    </div>
+  </div>
+</div>
+</ng-container>
